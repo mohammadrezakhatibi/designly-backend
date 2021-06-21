@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>آبرنگ دیجیتال</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="robots" content="INDEX,FOLLOW,all" />
+        <meta name="googlebot" content="INDEX, FOLLOW" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+        <meta name="viewport" content="width=device-width, minimal-ui">
+
+        <link rel="stylesheet" media="screen" href="library/css/semantic/dist/semantic.rtl.css">
+        <link rel="stylesheet" media="screen" href="library/css/style.css">
+        <link rel="stylesheet" media="screen" href="library/css/dropzone.min.css">
+
+        <script type="text/javascript" src="library/js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="library/css/semantic/dist/semantic.js"></script>
+        <script src="library/js/dropzone.min.js"></script>
+
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+
+        <script>
+            
+            Dropzone.options.backDesign = false;
+
+            Dropzone.options.backDesign = {
+                    paramName: "file", // The name that will be used to transfer the file
+                    maxFilesize: 2, // MB
+                    dictDefaultMessage:"<h3>طرح رو</h3><span>فایل خود را اینجا بکشید.</span>",
+                    dictInvalidFileType:"فرمت فایل معتبر نیست.",
+                    dictFileTooBig:"حجم عکس بیش از حد مجاز است.({{filesize}}) - حدمجاز: {{maxFilesize}}مگابایت",
+                    acceptedFiles: "image/*,application/pdf,.psd",
+                    maxFiles: 1,
+                    init: function() {
+                        this.on("addedfile", function() {
+                        if (this.files[1]!=null){
+                            this.removeFile(this.files[0]);
+                        }
+                        });
+                    },
+                    accept: function(file, done) {
+
+                    }
+            };
+
+            Dropzone.options.forwardDesign = {
+                    paramName: "file", // The name that will be used to transfer the file
+                    maxFilesize: 2, // MB
+                    dictDefaultMessage:"<h3>طرح پشت</h3><span>فایل خود را اینجا بکشید.</span>",
+                    dictInvalidFileType:"فرمت فایل معتبر نیست.",
+                    dictFileTooBig:"حجم عکس بیش از حد مجاز است.({{filesize}}) - حدمجاز: {{maxFilesize}}مگابایت",
+                    acceptedFiles: "image/*,application/pdf,.psd",
+                    maxFiles: 1,
+                    init: function() {
+                        this.on("addedfile", function() {
+                        if (this.files[1]!=null){
+                            this.removeFile(this.files[0]);
+                        }
+                        });
+                    },
+                    accept: function(file, done) {
+                        if (file.name == "justinbieber.jpg") {
+                        done("Naha, you don't.");
+                        }
+                        else { done(); }
+                    }
+            };
+            $(document).ready(function(){
+                $('.ui.dropdown').dropdown();
+
+
+                    
+                
+            });
+        </script>
+
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="main">
+                <div class="sidebar">
+                    <aside>
+                        <div class="avatar">
+                            <img src="library/img/avatar.png" alt="avatar" />
+                            <p class="name">محمدرضا خطیبی</p>
+                            <span class="company">اسپاد کریتیو</span>
+                            <span class="date">۱۳ خرداد ۱۳۹۷</span>
+                        </div>
+                        <nav>
+                            <ul>
+                                <li><a href="">سفارش جدید</a></li>
+                                <li><a href="">سفارشات</a></li>
+                                <li><a href="">پیگیری سفارش</a></li>
+                                <li><a href="">پروفایل</a></li>
+                                <li><a href="">راهنما</a></li>
+                                <li><a href="">دانلود فرم‌های آماده</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+
+                </div>
+                <header>
+                    <div class="logo">
+                        <img src="library/img/logo.png" alt="logo"/>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="#">تماس با ما</a></li>
+                            <li><a href="#">پیگیری سفارش</a></li>
+                            <li><a href="#">راهنما</a></li>
+                        </ul>
+                    </div>
+                </header>
+                <div class="content">
+                    <h2 class="ui header">
+                        کارت ویزیت سلفون مات
+                    </h2>
+
+                    <div id="product_single">
+                        <div class="meta">
+                            <div class="img">
+                                <img src="" alt=""/>
+                            </div>
+                            <button class="ui basic green button">
+                                <i class="icon file"></i>
+                                دریافت فایل راهنما این محصول   
+                            </button>
+                        </div>
+
+                        <div class="attribute">
+                            <form class="ui form">
+                                <div class="ui grid">
+                                    <div class="three wide column">سایز</div>
+                                    <div class="thirteen wide column">
+                                        <select class="ui fluid selection dropdown">
+                                            <option value="">انتخاب سایز</option>
+                                            <option value="1">Male</option>
+                                            <option value="0">Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="three wide column">تعداد</div>
+                                    <div class="thirteen wide column">
+                                        <select class="ui fluid selection dropdown">
+                                            <option value="">انتخاب تعداد</option>
+                                            <option value="1">Male</option>
+                                            <option value="0">Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="three wide column">نوع برش</div>
+                                    <div class="thirteen wide column">
+                                            <select class="ui fluid selection dropdown">
+                                                <option value="">انتخاب نوع برش</option>
+                                                <option value="1">Male</option>
+                                                <option value="0">Female</option>
+                                            </select>
+                                    </div>
+                                    <div class="three wide column">نوع چاپ</div>
+                                    <div class="thirteen wide column">
+                                            <select class="ui fluid selection dropdown">
+                                                <option value="">انتخاب نوع چاپ</option>
+                                                <option value="1">Male</option>
+                                                <option value="0">Female</option>
+                                            </select>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </form>
+
+                            <div id="file_upload" class="ui grid">
+                                <div class="five wide column">
+                                    فایل طرح
+
+                                    <p>فرمت‌های مجاز:</p>
+                                    <span>jpg .jpeg .psd .pdf .tiff .tif .png</span>
+                                </div>
+
+                                <div class="eleven wide column">
+                                    <form action="/file-upload" class="dropzone" id="forward-design">
+                                        <div class="fallback">
+                                            <input name="file" type="file" multiple />
+                                        </div>
+                                    </form>
+                                    <form action="/file-upload" class="dropzone" id="back-design">
+                                        <div class="fallback">
+                                        <input name="file" type="file" multiple />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="right">
+                                <button class="ui primary button">
+                                    ثبت سفارش    
+                                    <i class="left_arrow"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="clr"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

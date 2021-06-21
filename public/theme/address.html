@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>آبرنگ دیجیتال</title>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="robots" content="INDEX,FOLLOW,all" />
+        <meta name="googlebot" content="INDEX, FOLLOW" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+        <meta name="viewport" content="width=device-width, minimal-ui">
+
+        <link rel="stylesheet" media="screen" href="library/css/semantic/dist/semantic.rtl.css">
+        <link rel="stylesheet" media="screen" href="library/css/style.css">
+
+        <script type="text/javascript" src="library/js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="library/css/semantic/dist/semantic.js"></script>
+
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+        <script>
+            $(document).ready(function(){
+        
+                $('.deleteBtn').click( function() {
+                    $('.ui.modal.delete')
+                        .modal('show','setting', 'transition', 'fade up');
+                });
+
+                $('#add-address').click( function() {
+                    $('.ui.modal.add-address')
+                        .modal('show','setting', 'transition', 'fade up');
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+        <div class="ui mini modal delete">
+            <div class="header">
+                اطمینان دارید؟
+            </div>
+            <div class="content">
+                <p>آیا از حذف آدرس خانه اطمینان دارید؟</p>
+            </div>
+            <div class="actions">
+                <div class="ui positive right icon button">
+                    <i class="checkmark icon"></i>
+                    بله
+                </div>
+                <div class="ui negative button">
+                    <i class="close icon"></i>
+                    خیر
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ui tiny modal add-address">
+            <div class="header">
+                اضافه کردن آدرس جدید
+            </div>
+            <div class="content">
+                <p>آیا از حذف آدرس خانه اطمینان دارید؟</p>
+            </div>
+            <div class="actions">
+                <div class="ui positive right icon button">
+                    <i class="checkmark icon"></i>
+                    بله
+                </div>
+                <div class="ui negative button">
+                    <i class="close icon"></i>
+                    خیر
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="main">
+                <div class="sidebar">
+                    <aside>
+                        <div class="avatar">
+                            <img src="library/img/avatar.png" alt="avatar" />
+                            <p class="name">محمدرضا خطیبی</p>
+                            <span class="company">اسپاد کریتیو</span>
+                            <span class="date">۱۳ خرداد ۱۳۹۷</span>
+                        </div>
+                        <nav>
+                            <ul>
+                                <li><a href="">سفارش جدید</a></li>
+                                <li><a href="">سفارشات</a></li>
+                                <li><a href="">پیگیری سفارش</a></li>
+                                <li><a href="">پروفایل</a></li>
+                                <li><a href="">راهنما</a></li>
+                                <li><a href="">دانلود فرم‌های آماده</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+
+                </div>
+                <header>
+                        <div class="logo">
+                            <img src="library/img/logo.png" alt="logo"/>
+                        </div>
+                        <div class="menu">
+                            <ul>
+                                <li><a href="#">تماس با ما</a></li>
+                                <li><a href="#">پیگیری سفارش</a></li>
+                                <li><a href="#">راهنما</a></li>
+                            </ul>
+                        </div>
+                    </header>
+                <div class="content">
+                    <h2 class="ui header">
+                        آدرس‌‌ها
+                    </h2>
+                    <div id="address" class="ui grid">
+                        <ul>
+                            <li>
+                                <div class="address-box">
+                                    <div class="right">
+                                        <h3>خانه</h3>
+                                        <p class="tel"><span>تلفن: </span> ۲۲۸۹۲۷۸۶</p>
+                                        <p class="address"><span>آدرس: </span> خیابان شریعتی - نرسیده به ظفر - بن‌بست امانی - پلاک ۱۴</p>
+                                    </div>
+                                    <div class="left">
+                                        <div class="ui vertical basic icon buttons">
+                                            <button class="ui button">
+                                                <i class="edit icon green"></i>
+                                            </button>
+                                            <button class="ui button deleteBtn">
+                                                <i class="trash icon red"></i>
+                                            </button>
+                                          </div>
+                                    </div>
+                                    <div class="clr"></div>
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <div class="address-box">
+                                    <div class="right">
+                                        <h3><i class="circle icon"></i>خانه</h3>
+                                        <p class="tel"><span>تلفن: </span> ۲۲۸۹۲۷۸۶</p>
+                                        <p class="address"><span>آدرس: </span> خیابان شریعتی - نرسیده به ظفر - بن‌بست امانی - پلاک ۱۴</p>
+                                    </div>
+                                    <div class="left">
+                                        <div class="ui vertical basic icon buttons">
+                                            <button class="ui button">
+                                                <i class="edit icon green"></i>
+                                            </button>
+                                            <button class="ui button">
+                                                <i class="trash icon red"></i>
+                                            </button>
+                                          </div>
+                                    </div>
+                                    <div class="clr"></div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <button id="add-address" class="positive ui button">
+                            <i class="add icon"></i>
+                            افزودن آدرس جدید
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
