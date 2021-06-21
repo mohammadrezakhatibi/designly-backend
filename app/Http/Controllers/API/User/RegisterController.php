@@ -56,7 +56,6 @@ class RegisterController extends BaseController
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){ 
             $user = Auth::user(); 
             $success['token'] =  $user->createToken('Designly')-> accessToken; 
-            $success['refresh_token'] =  $user->createToken('Designly')-> refreshToken; 
             $success['name'] =  $user->name;
             $success['email'] =  $user->email;
             $success['email_verified_at'] =  $user->email_verified_at;
