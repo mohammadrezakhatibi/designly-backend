@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\User\UserController;
 use App\Http\Controllers\API\Content\PostController;
 use App\Http\Controllers\API\User\RegisterController;
 
@@ -15,14 +16,20 @@ use App\Http\Controllers\API\User\RegisterController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::post('register', [RegisterController::class, 'register'])->name('register');
-Route::post('login', [RegisterController::class, 'login']);
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
-Route::middleware('auth:api')->group(function () {
-    Route::get('posts', [PostController::class, 'index'])->name('getPosts');
-    Route::get('posts/{id}', [PostController::class, 'getPostBy'])->name('getPostById');
+Route::group(['prefix' => 'v1'], function () {
+
+    Route::post('register', [RegisterController::class, 'register'])->name('register');
+    Route::post('login', [RegisterController::class, 'login']);
+    
+    Route::group(['prefix' => 'user','middleware' => ['auth:api']], function () {
+        Route::get('/', [UserController::class, 'getUserInfo'])->name('getUserInfo');
+    });
+    
+    Route::middleware('auth:api')->group(function () {
+        Route::get('posts', [PostController::class, 'index'])->name('getPosts');
+        Route::get('posts/{id}', [PostController::class, 'getPostBy'])->name('getPostById');
+    });
+    
 });
