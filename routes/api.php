@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\User\UserController;
-use App\Http\Controllers\API\Content\PostController;
+use App\Http\Controllers\API\Content\FutureController;
 use App\Http\Controllers\API\User\RegisterController;
 
 /*
@@ -27,9 +27,9 @@ Route::group(['prefix' => 'v1'], function () {
         Route::get('/', [UserController::class, 'getUserInfo'])->name('getUserInfo');
     });
     
-    Route::middleware('auth:api')->group(function () {
-        Route::get('posts', [PostController::class, 'index'])->name('getPosts');
-        Route::get('posts/{id}', [PostController::class, 'getPostBy'])->name('getPostById');
+    Route::prefix('future')->middleware('auth:api')->group(function () {
+        Route::post('/write', [FutureController::class, 'make']);
+        Route::get('/get/{id}', [FutureController::class, 'get']);
     });
     
 });

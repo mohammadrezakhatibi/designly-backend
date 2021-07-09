@@ -9,9 +9,12 @@ use App\Http\Controllers\API\BaseController;
 
 class UserController extends BaseController
 {
+
+    public function index() {
+        return 'redirect()->back()';
+    }
     public function getUserInfo() {
         $user = Auth::user();
-
         $response = [
             'id' => $user->id,
             'name' => $user->name,
