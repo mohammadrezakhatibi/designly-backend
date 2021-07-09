@@ -24,4 +24,11 @@ class Post extends Model
     {
         return $this->hasOne(Source::class,'id', 'source_id');
     }
+
+
+    public function favorite()
+    {
+        return $this->hasMany(Favorite::class);
+    }
+
 }

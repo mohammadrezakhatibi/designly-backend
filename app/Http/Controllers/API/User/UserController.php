@@ -11,7 +11,6 @@ class UserController extends BaseController
 {
     public function getUserInfo() {
         $user = Auth::user();
-
         $response = [
             'id' => $user->id,
             'name' => $user->name,

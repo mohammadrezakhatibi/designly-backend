@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\User\UserController;
 use App\Http\Controllers\API\Content\PostController;
+use App\Http\Controllers\API\User\FavoriteController;
 use App\Http\Controllers\API\User\RegisterController;
 
 /*
@@ -25,6 +26,7 @@ Route::group(['prefix' => 'v1'], function () {
     
     Route::group(['prefix' => 'user','middleware' => ['auth:api']], function () {
         Route::get('/', [UserController::class, 'getUserInfo'])->name('getUserInfo');
+        Route::get('/favorites', [FavoriteController::class, 'getUserFavoritePost'])->name('getUserFavoritePost');
     });
     
     Route::middleware('auth:api')->group(function () {
