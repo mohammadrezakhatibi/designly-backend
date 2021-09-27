@@ -69,6 +69,10 @@
                         <input type="text" placeholder="Link" value="" name="link">
                     </div>
                     <div class="field">
+                        <label>Is external link?</label>
+                        <input type="text" placeholder="Is external link?" value="0" name="is_external_link">
+                    </div>
+                    <div class="field">
                         <label>Description</label>
                         <textarea name="description"></textarea>
                     </div>

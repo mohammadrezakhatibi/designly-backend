@@ -6,6 +6,7 @@ use App\Http\Controllers\API\User\UserController;
 use App\Http\Controllers\API\Content\PostController;
 use App\Http\Controllers\API\User\FavoriteController;
 use App\Http\Controllers\API\User\RegisterController;
+use App\Http\Controllers\API\Content\FeaturedController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,9 @@ Route::group(['prefix' => 'v1'], function () {
     Route::middleware('auth:api')->group(function () {
         Route::get('posts', [PostController::class, 'index'])->name('getPosts');
         Route::get('posts/{id}', [PostController::class, 'getPostBy'])->name('getPostById');
+
+
+        Route::get('explore', [FeaturedController::class, 'index'])->name('featuredContents');
     });
     
 });

@@ -15,12 +15,14 @@ class PostResponseResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'        => $this->id,
-            'title'     => $this->title,
-            'creator'   => $this->creator,
-            'link'      => $this->link,
-            'category'  => $this->category,
-            'source'    => $this->source,
+            'id'                    => $this->id,
+            'title'                 => $this->title,
+            'creator'               => $this->creator,
+            'link'                  => $this->link,
+            'is_external_link'      => $this->is_external_link,
+            'image_url'             => $this->image_url,
+            'category'              => $this->category,
+            'source'                => $this->source,
         ];
     }
 }

@@ -36,6 +36,8 @@ class PostController extends BaseController
         $post->creator = $request->creator;
         $post->link = $request->link;
 
+        $post->is_external_link = $request->is_external_link;
+
         $postsArray = Post::paginate(18);
 
         if ($post->save()) {

@@ -19,7 +19,7 @@ class PostController extends BaseController
 
         $postsArray = PostResource::collection($posts);
         $response = [
-            'posts' => $postsArray,
+            'items' => $postsArray,
             'pagination'  => [
                 'total' => $posts->total(),
                 'next_page_url' => $posts->nextPageUrl(),
