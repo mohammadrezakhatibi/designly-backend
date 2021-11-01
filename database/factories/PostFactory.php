@@ -32,6 +32,7 @@ class PostFactory extends Factory
             'title' => $this->faker->sentence($nbWords = rand(4,7), $variableNbWords = true),
             'creator' => $fullname,
             'link' => $this->faker->url(),
+            'is_external_link' => true,
         ];
     }
 }
