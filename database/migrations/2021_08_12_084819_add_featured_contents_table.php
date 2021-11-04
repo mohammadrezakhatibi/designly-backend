@@ -13,7 +13,7 @@ class AddFeaturedContentTable extends Migration
      */
     public function up()
     {
-        Schema::create('featured_content', function (Blueprint $table) {
+        Schema::create('featured_contents', function (Blueprint $table) {
             $table->id();
 
             $table->unsignedBigInteger('post_id')->index();
@@ -21,7 +21,7 @@ class AddFeaturedContentTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('featured_content', function($table) {
+        Schema::table('featured_contents', function($table) {
 
             $table->foreign('post_id')
                 ->references('id')
@@ -38,6 +38,6 @@ class AddFeaturedContentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('featured_content');
+        Schema::dropIfExists('featured_contents');
     }
 }

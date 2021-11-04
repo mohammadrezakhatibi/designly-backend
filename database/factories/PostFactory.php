@@ -28,11 +28,12 @@ class PostFactory extends Factory
         $fullname = $name ." " .$lastname;
         return [
             'category_id' => rand(1,30),
-            'source_id' => rand(1,43),
+            'source_id' => rand(1,30),
             'title' => $this->faker->sentence($nbWords = rand(4,7), $variableNbWords = true),
             'creator' => $fullname,
             'link' => $this->faker->url(),
             'is_external_link' => true,
+            'image_url' => '',
         ];
     }
 }

@@ -14,6 +14,6 @@ class SourceSeeder extends Seeder
      */
     public function run()
     {
-        Source::factory(10)->create();
+        Source::factory(30)->create();
     }
 }
