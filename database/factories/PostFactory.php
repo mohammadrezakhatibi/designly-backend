@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Post;
 use App\Models\Source;
 use App\Models\Category;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PostFactory extends Factory
@@ -33,7 +34,16 @@ class PostFactory extends Factory
             'creator' => $fullname,
             'link' => $this->faker->url(),
             'is_external_link' => true,
-            'image_url' => '',
+            'image_url' => $this->getImage(),
         ];
+    }
+
+    function getImage()
+    {
+        $client = Http::get('https://api.unsplash.com/photos/random?orientation=landscape&client_id=UnCFM7EGllg-1R3VbdSgJIS9pIZSx-iHhZDKUtdBPwQ');
+        $states = $client->getBody();
+        $states = json_decode($states, true);
+        
+        return $states['urls']['full'];
     }
 }
