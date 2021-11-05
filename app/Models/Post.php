@@ -20,6 +20,11 @@ class Post extends Model
         return $this->hasOne(Category::class, 'id','category_id');
     }
 
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'id','post_id');
+    }
+
     public function source()
     {
         return $this->hasOne(Source::class,'id', 'source_id');

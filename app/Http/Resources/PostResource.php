@@ -23,6 +23,7 @@ class PostResource extends JsonResource
             'image_url'             => $this->image_url,
             'category'              => $this->category,
             'source'                => $this->source,
+            'tags'                  => $this->tags,
         ];
     }
 }
