@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\User\UserController;
+use App\Http\Controllers\API\Content\TagController;
 use App\Http\Controllers\API\Content\PostController;
 use App\Http\Controllers\API\User\FavoriteController;
 use App\Http\Controllers\API\User\RegisterController;
@@ -34,5 +35,6 @@ Route::group(['prefix' => 'v1'], function () {
     Route::get('posts/{id}', [PostController::class, 'getPostBy'])->name('getPostById');
 
     Route::get('explore', [FeaturedController::class, 'index'])->name('featuredContents');
+    Route::get('tags', [TagController::class, 'index'])->name('gettAllTags');
     
 });
