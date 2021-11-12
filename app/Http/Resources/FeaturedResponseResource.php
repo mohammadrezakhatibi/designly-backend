@@ -17,6 +17,7 @@ class FeaturedResponseResource extends JsonResource
         return [
             'id'                    => $this->post->id,
             'title'                 => $this->post->title,
+            'slug'                  => $this->post->slug,
             'creator'               => $this->post->creator,
             'link'                  => $this->post->link,
             'is_external_link'      => $this->post->is_external_link,

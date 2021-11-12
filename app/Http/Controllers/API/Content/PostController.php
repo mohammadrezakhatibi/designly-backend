@@ -30,11 +30,11 @@ class PostController extends BaseController
         return $this->sendResponse($response, 'get posts successfully.');
     }
 
-    public function getPostBy($id)
+    public function getPostBy($slug)
     {
         try
         {
-            $post = new PostResponseResource(Post::findOrFail($id));
+            $post = new PostResponseResource(Post::where('slug', '=', $slug)->firstOrFail());
             return $this->sendResponse($post, 'get post  successfully.');
         }
 
@@ -42,5 +42,22 @@ class PostController extends BaseController
         {
             return $this->sendError('Post not found',[],404);
         }
+    }
+
+    public function highlights()
+    {
+    	$posts = Post::orderBy('created_at')->paginate(44);
+
+        $postsArray = PostResource::collection($posts);
+        $response = [
+            'items' => $postsArray,
+            'pagination'  => [
+                'total' => $postsArray->total(),
+                'next_page_url' => $postsArray->nextPageUrl(),
+                'per_page' => $postsArray->perPage()
+            ]
+        ];
+
+        return $this->sendResponse($response, 'get posts successfully.');
     }
 }

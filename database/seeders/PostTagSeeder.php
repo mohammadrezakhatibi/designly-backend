@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\PostTag;
+use App\Models\PostsTag;
 use Illuminate\Database\Seeder;
 
 class PostTagSeeder extends Seeder
@@ -14,6 +14,6 @@ class PostTagSeeder extends Seeder
      */
     public function run()
     {
-        PostTag::factory(60)->create();
+        PostsTag::factory(60)->create();
     }
 }

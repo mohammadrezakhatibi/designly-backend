@@ -22,7 +22,7 @@ class CreatePostsTagsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('post_tags', function($table) {
+        Schema::table('posts_tags', function($table) {
 
             $table->foreign('post_id')
                 ->references('id')
@@ -44,6 +44,6 @@ class CreatePostsTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_tags');
+        Schema::dropIfExists('posts_tags');
     }
 }

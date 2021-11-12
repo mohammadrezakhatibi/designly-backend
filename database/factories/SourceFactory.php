@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Source;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class SourceFactory extends Factory
 {
@@ -21,10 +22,14 @@ class SourceFactory extends Factory
      */
     public function definition()
     {
+        $title = $this->faker->domainWord();
+        $slug = Str::slug($title, '-');
+        
         return [
-            'title' => $this->faker->domainWord(),
+            'title' => $title,
             'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
             'logo' => $this->faker->imageUrl($width = 800, $height = 800),
+            'slug' => $slug,
         ];
     }
 }

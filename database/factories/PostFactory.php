@@ -7,6 +7,7 @@ use App\Models\Source;
 use App\Models\Category;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class PostFactory extends Factory
 {
@@ -27,10 +28,15 @@ class PostFactory extends Factory
         $name = $this->faker->firstNameMale();
         $lastname = $this->faker->lastName();
         $fullname = $name ." " .$lastname;
+
+        $title = $this->faker->sentence;
+        $slug = Str::slug($title, '-');
+
         return [
             'category_id' => rand(1,30),
             'source_id' => rand(1,30),
-            'title' => $this->faker->sentence($nbWords = rand(4,7), $variableNbWords = true),
+            'title' => $title,
+            'slug' => $slug,
             'creator' => $fullname,
             'link' => $this->faker->url(),
             'is_external_link' => true,

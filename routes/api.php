@@ -32,9 +32,12 @@ Route::group(['prefix' => 'v1'], function () {
     });
     
     Route::get('posts', [PostController::class, 'index'])->name('getPosts');
-    Route::get('posts/{id}', [PostController::class, 'getPostBy'])->name('getPostById');
+    Route::get('posts/{slug}', [PostController::class, 'getPostBy'])->name('getPostById');
+    Route::get('highlights', [PostController::class, 'highlights'])->name('highlightsPost');
 
     Route::get('explore', [FeaturedController::class, 'index'])->name('featuredContents');
+    
     Route::get('tags', [TagController::class, 'index'])->name('gettAllTags');
+    Route::get('tags/{slug}/posts', [TagController::class, 'getTagPost'])->name('getTagPost');
     
 });

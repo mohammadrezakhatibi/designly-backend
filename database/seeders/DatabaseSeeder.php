@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
             SourceSeeder::class,
             PostSeeder::class,
             FeaturedContentSeeder::class,
+            TagSeeder::class,
+            PostTagSeeder::class,
         ]);
     }
 }

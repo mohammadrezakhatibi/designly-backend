@@ -15,15 +15,14 @@ class FeaturedController extends BaseController
 {
     public function index()
     {
-    	$featureds = FeaturedContent::paginate(5);
-    	$posts = Post::paginate(15)->sortBy('created_at');
+    	$featureds = FeaturedContent::paginate(7);
+    	// $posts = Post::paginate(15)->sortBy('created_at');
 
         $featuredsArray = FeaturedResponseResource::collection($featureds);
-        $postsArray = PostResource::collection($posts);
+        //$postsArray = PostResource::collection($posts);
 
         $response = [
-            'featureds' => $featuredsArray,
-            'posts' => $postsArray,
+            'items' => $featuredsArray,
             'pagination'  => [
                 'total' => $featureds->total(),
                 'next_page_url' => $featureds->nextPageUrl(),

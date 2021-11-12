@@ -2,17 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\PostTag;
+use App\Models\PostsTag;
+use Database\Factories\PostsTagFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class PostTagFactory extends Factory
+class PostsTagFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = PostTag::class;
+    protected $model = PostsTag::class;
 
     /**
      * Define the model's default state.
