@@ -26,7 +26,9 @@ class TagController extends BaseController
         $posts = $tag->posts;
         $postsArray = PostResource::collection($posts);
         $response = [
-            'items' => $postsArray
+            'tag_id' => $tag->id,
+            'tag_slug' => $tag->slug,
+            'posts' => $postsArray,
         ];
         return $this->sendResponse($response, 'get posts successfully.');
     }
