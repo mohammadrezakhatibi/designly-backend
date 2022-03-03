@@ -46,7 +46,7 @@ class PostFactory extends Factory
 
     function getImage()
     {
-        $client = Http::get('https://api.unsplash.com/photos/random?orientation=landscape&client_id=UnCFM7EGllg-1R3VbdSgJIS9pIZSx-iHhZDKUtdBPwQ');
+        $client = Http::get('https://api.unsplash.com/photos/random?orientation=landscape&client_id=1Sxgmkf9T0g9P1YWQk6TXWl_zSLU7Fub9Jfqc21oths');
         $states = $client->getBody();
         $states = json_decode($states, true);
         
