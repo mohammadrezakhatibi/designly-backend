@@ -22,7 +22,7 @@ class RegisterController extends BaseController
         $user = User::where('email',$request->email)->first();
 
         if (!empty($user)) {
-            return $this->sendError('Unauthorised.', ['error'=>'user exist']);
+            return $this->sendError('unauthorized.', ['error'=>'user exist']);
         }
 
         $validator = Validator::make($request->all(), [
@@ -63,7 +63,7 @@ class RegisterController extends BaseController
             return $this->sendResponse($success, 'User login successfully.');
         } 
         else{ 
-            return $this->sendError('Unauthorised.', ['error'=>'Unauthorised']);
+            return $this->sendError('unauthorized.', ['error'=>'unauthorized']);
         } 
     }
 }

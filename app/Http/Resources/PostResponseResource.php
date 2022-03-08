@@ -24,6 +24,7 @@ class PostResponseResource extends JsonResource
             'image_url'             => $this->image_url,
             'category'              => $this->category,
             'source'                => $this->source,
+            'isFavorite'            => $this->isFavorite(),
         ];
     }
 }

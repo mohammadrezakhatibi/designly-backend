@@ -25,6 +25,7 @@ class PostResource extends JsonResource
             'category'              => $this->category,
             'source'                => $this->source,
             'tags'                  => $this->tags,
+            'isFavorite'            => $this->isFavorite(),
         ];
     }
 }

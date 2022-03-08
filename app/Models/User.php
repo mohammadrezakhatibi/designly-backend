@@ -45,6 +45,15 @@ class User extends Authenticatable
     
     public function favorite()
     {
-        return $this->hasMany(Favorite::class);
+        return $this->hasMany(UserFavoriteContent::class);
+    }
+
+    public function isPostFavoriteByUser($postID) { 
+        $post = UserFavoriteContent::where('user_id', $this->id)->where('post_id', $postID)->first();
+        if (empty($post)) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }

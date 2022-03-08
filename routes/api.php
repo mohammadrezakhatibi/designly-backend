@@ -29,15 +29,18 @@ Route::group(['prefix' => 'v1'], function () {
     Route::group(['prefix' => 'user','middleware' => ['auth:api']], function () {
         Route::get('/', [UserController::class, 'getUserInfo'])->name('getUserInfo');
         Route::get('/favorites', [FavoriteController::class, 'getUserFavoritePost'])->name('getUserFavoritePost');
+        Route::put('/favorite', [FavoriteController::class, 'favoritePost'])->name('favoritePost');
+        Route::delete('/favorite', [FavoriteController::class, 'removeFavoritePost'])->name('removeFavoritePost');
     });
     
     Route::get('posts', [PostController::class, 'index'])->name('getPosts');
-    Route::get('posts/{slug}', [PostController::class, 'getPostBy'])->name('getPostById');
+    Route::get('posts/{slug}', [PostController::class, 'getPostBy'])->name('getPostBySlug');
     Route::get('highlights', [PostController::class, 'highlights'])->name('highlightsPost');
 
     Route::get('explore', [FeaturedController::class, 'index'])->name('featuredContents');
     
-    Route::get('tags', [TagController::class, 'index'])->name('gettAllTags');
+    Route::get('tags', [TagController::class, 'index'])->name('getAllTags');
     Route::get('tags/{slug}/posts', [TagController::class, 'getTagPost'])->name('getTagPost');
     
+
 });

@@ -34,7 +34,7 @@ class PostController extends BaseController
     {
         try
         {
-            $post = new PostResponseResource(Post::where('slug', '=', $slug)->firstOrFail());
+            $post = new PostResponseResource(Post::where('slug', '=', $slug)->orWhere('id', '=', $slug)->firstOrFail());
             return $this->sendResponse($post, 'get post  successfully.');
         }
 
